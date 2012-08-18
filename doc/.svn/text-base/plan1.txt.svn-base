@@ -1,0 +1,134 @@
+Home Page (after Login)
+
+  - Create/Edit Profile
+  - Create/Edit Master Resume
+  - Create a Resume
+  - Create/Edit Cover Letter Template
+    ------
+  - Create Custom Cover Letter
+    ------
+  - Create New Job Entry
+  - Show Job History
+
+
+0) Profile contains all the basic information such as Name, Address,
+   E-Mail, etc.
+
+1) Master Resume is not a resume that you would probably send with an
+   application. It will contain *all* the information about your
+   qualifications and experience. For a given job, you would pick
+   certain sections and likely edit them to create a Custom
+   Resume. Note that you can save multiple Custom Resumes once you
+   have created them. They will be re-usable for different jobs.
+
+2) Cover Letter Templates. You can create multiple Templates. The
+   fields will be automatically filled when you create a Custom Cover
+   Letter using one of them.
+
+======================================================================
+Create/Edit Profile
+
+  - Name
+  - Address
+  - Phone(s)
+  - E-Mail
+  - Web
+  - ???
+
+   Save button
+
+======================================================================
+Create/Edit Master Resume
+
+  - Profile Summary
+  - Skills
+  - Work Record
+    -- Organization/Company
+    -- Place
+    -- Time Period
+    -- Role
+    -- Duties
+    -- Recognitions
+  - Community Involvement
+  - Personal Achievements
+  - References
+
+Notes: When creating a custom resume, you will pick sections from the
+       Master Resume and assemble into one document and maybe edit.
+
+       When creating a Custom Resume, each section of the Master
+       Resume will have a check box that allows you to pick which
+       sections to include in the Custom Resume.
+
+       As the user might change the content of the resume from time to
+       time, it is important to record a *version* of the Master
+       Resume. (Use svn to store different versions??)
+======================================================================
+Create/Edit Cover Letter Template
+
+  - Letter Body
+
+    Save button (can give different names to save as)
+
+Notes: Only the letter body needs to be entered. The address and other
+       personal information is automatically taken from the Profile
+       whereas the addressee is taken from the Job Entry for the
+       particular job.
+
+       You can use Field Names, such as Company Name (defined in the
+       Job Record) within the body.
+
+       When preparing a Cover Letter for a particular job, you select
+       a particular Cover Letter Template. That will create a Custom
+       Cover Letter for that job.
+======================================================================
+Create Resume
+
+  - Display Master Resume with checkboxes
+  - Allows giving a name. Internally, there will be only one resume
+    and different versions of it. The name given here will be
+    associated with a version numver.
+
+    Create button creates a customized resume and displays it.
+    There are number of different options for display: 1) as text 2)
+    as an HTML file 3) as a PDF file
+
+    The displayed file can be printed and/or downloaded to local
+    computer and edited if necessary (only works with text or HTML
+    formats).
+
+Notes: 
+  1) The resume will be saved in HTML format only.
+  2) The user can create any number of Resumes and save them. They
+     will be available for selection when applying for a job.
+  3) In addition, there should be possibility of uploading resumes
+     created by other means (like a Word document created on the local
+     PC.) They will also be listed for selection.
+
+======================================================================
+Create Custom Cover Letter
+
+  - Shows a list of Cover Letter Templates with radio buttons to pick
+    one. 
+
+======================================================================
+Job Entry Record
+
+  - Company/Organization
+  - Address
+  - Phone
+  - Fax
+  - Position
+  - Last Action
+  - LA Date
+  - Next Action
+  - NA Date
+  - ActivityHistory (multiple activities)
+  - Version of Cover Letter Sent (retrieved from Revision Control System)
+  - Version of Resume Sent (retrieved from Revision Control System)
+
+Notes: When an application (cover letter and resume) is sent, both of
+       them are stored in a revision control system by names
+       <uid>_cover.html and <uid>_resume.html. Thus it is important
+       that, after an application has been submitted (i.e., as soon as
+       the Status has changed to 'Applied'), no changes are allowed.

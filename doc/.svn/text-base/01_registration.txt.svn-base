@@ -1,0 +1,41 @@
+ToDo
+====
+  - as it is, we cannot test e-mail sending. Implement this on Visva's
+    vServer. 
+
+User Registration
+=================
+
+One of the basic requirements of this (and any similar) application is
+that there must be a mechanism to allow users to register in order to
+access the service. Few things that are basic:
+
+  - user registers accepting 'terms of use'
+  - system sends a mail asking user to activate the account
+  - user follows the link to activate accout
+  - user logs in
+  - if user has forgotten password, he/she can request a password
+    reset
+  - user can change password at any time
+
+Django's auth system and the add-on 'registration' application provides the
+required functionality.
+
+The version 0.7 of django-registration was installed. In order to use
+the functionality, it requires you to write a number of template
+files. Used the files found in the article 
+
+  http://devdoodles.wordpress.com/2009/02/16/user-authentication-with-django-registration/
+
+as a starting point. However, a number of things needed to be
+adjusted:
+
+  - In each form template, the new {% csrf_token %} variable had to be
+    included to conform with cross-site scripting prevention.
+
+  - In jslog app a new view (IndexView) was created. The idea is to
+    facilitate displaying a template without going through a view
+    'function'. In the base.html file, {% url index %} was changed to
+    {% url "/" %} to stop the error. Need to understand what is going
+    on... 
+
